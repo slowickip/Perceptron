@@ -14,7 +14,7 @@ public class Main {
 
         List<Observation> trainingData = getDataFromFile(args[1]);
         Perceptron perceptron = new Perceptron(trainingData.get(0).arguments.size(), 0.01);
-        perceptron.train(trainingData, 10000000, 0.00);
+        perceptron.train(trainingData, 10000000, 0.01);
 
         boolean exit = false;
 
@@ -62,7 +62,7 @@ public class Main {
 
     private static List<Observation> getDataFromFile(String pathName) {
         List<Observation> records = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(pathName));) {
+        try (Scanner scanner = new Scanner(new File(pathName))) {
             while (scanner.hasNextLine()) {
                 String s = scanner.nextLine();
                 String[] split = s.split(",");

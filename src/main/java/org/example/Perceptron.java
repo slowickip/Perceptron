@@ -44,8 +44,8 @@ public class Perceptron {
                 error += Math.pow(delta, 2);
             }
             error /= observations.size();
-//            System.out.println("Epoch: " + epochCtr + " Error: " + error);
             epochCtr++;
         }
+        System.out.println("Epochs: " + (epochCtr - 1));
     }
 }
